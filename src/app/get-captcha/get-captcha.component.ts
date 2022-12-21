@@ -18,8 +18,8 @@ export class GetCaptchaComponent {
   ok122000 = false;
   ok122500 = false;
   isLoading = false;
-  // url = 'https://1586863340063318.cn-zhangjiakou.fc.aliyuncs.com/2016-08-15/proxy/ly/update-sid/';
-  url = 'http://localhost:8000/2016-08-15/proxy/ly/update-sid/';
+  url = 'https://1586863340063318.cn-zhangjiakou.fc.aliyuncs.com/2016-08-15/proxy/ly/update-sid/';
+  // url = 'http://localhost:8000/2016-08-15/proxy/ly/update-sid/';
 
   constructor(private http: HttpClient) { }
   restart() {
