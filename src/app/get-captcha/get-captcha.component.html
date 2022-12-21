@@ -1,0 +1,41 @@
+<p>get-captcha works!</p>
+<div>
+  <p>
+    stage: {{stage}}
+  </p>
+  <p>
+    <button (click)="restart()">Restart</button>
+  </p>
+</div>
+
+<div *ngIf="isLoading">
+  Loading...
+</div>
+
+<div *ngIf="stage==0 && !isLoading">
+  <form (ngSubmit)="onSubmitPW()">
+    <input name="pw" [(ngModel)]="pw">
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="stage==1 && !isLoading">
+  <form (ngSubmit)="onSubmitCaptcha()">
+    <div>
+      <p>Captcha1</p>
+      <img [src]="captchaImg1">
+      <input name="captcha1" [(ngModel)]="captcha1">
+    </div>
+    <div>
+      <p>Captcha2</p>
+      <img [src]="captchaImg2">
+      <input name="captcha2" [(ngModel)]="captcha2">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="stage==2 && !isLoading">
+  <p>122000 OK: {{ok122000 | json}}</p>
+  <p>125000 OK: {{ok122500 | json}}</p>
+</div>
